@@ -8,7 +8,9 @@ const forecast= (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Location Error:' + body.error.info, undefined)
         } else {
-            callback(undefined, 'Forecast is ' + body.current.weather_descriptions + '. Current temp is ' + body.current.temperature + 'C and feels like ' + body.current.feelslike + 'C.')
+            callback(undefined, 'Forecast is ' + body.current.weather_descriptions +
+                '. Current temp is ' + body.current.temperature + 'C and feels like ' + body.current.feelslike + 'C.' +
+                ' Humidity is ' + body.current.humidity + '%.')
         }
     })
 }
